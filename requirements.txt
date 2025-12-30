@@ -1,0 +1,13 @@
+certifi==2025.11.12
+charset-normalizer==3.4.4
+et_xmlfile==2.0.0
+Faker==39.0.0
+idna==3.11
+lxml==6.0.2
+openpyxl==3.1.5
+pillow==12.0.0
+requests==2.32.5
+tenacity==9.1.2
+tzdata==2025.3
+urllib3==2.6.2
+xlwings==0.33.19
