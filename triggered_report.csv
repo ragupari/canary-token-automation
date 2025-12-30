@@ -1,7 +1,3 @@
 user_id,user_name,triggered,details
-1,Janaka,false,[]
-2,Sunari,false,[]
-3,Kavindu Viraj,false,[]
-4,Hirushan,false,[]
-5,Thajan,false,[]
-6,Parishith,true,"[{""time"": ""2025-12-30 15:42:20"", ""ip"": ""175.157.180.250""}]"
+1,Parishith,true,"[{""time"": ""2025-12-30 15:42:20"", ""ip"": ""111.222.333.444""}]"
+
