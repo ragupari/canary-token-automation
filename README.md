@@ -1,12 +1,15 @@
-# 🦅 Canary Automation Tool (`canary-cmd`)
+# 🦅 Canary Automation Tool
+
+> [!IMPORTANT]
+> **Working Model**: The `/canary-cmd` directory contains the latest production-ready version of the tool. Historical versions are preserved in `/v1.x.x` and `/v2.x.x` folders.
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Tooling: Rich](https://img.shields.io/badge/UI-Rich-brightgreen.svg)](https://github.com/Textualize/rich)
 
-> **The Canary Automation Tool** is a high-performance orchestration engine designed for security professionals to conduct simulated phishing and insider-threat detection campaigns using professional-grade CanaryTokens.
-
 ---
+
+
 
 ## 📦 Quick Start: Running the Standalone Binary
 

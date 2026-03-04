@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+ENV/
+
+# Distribution / Build
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Specific Big Binaries
+canary_automation
+**/canary_automation
+
+# Logs
+*.log
+**/canary_automation.log
+
+# Data and Generated Output
+generated_canaries/
+**/generated_canaries/
+campaign_report.csv
+compromised_report.csv
+tracking_map.csv
+campaign_summary.pdf
+**/tracking_map.csv
+**/campaign_summary.pdf
+test.json
+test_hist.json
+
+# Environment Secrets
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db

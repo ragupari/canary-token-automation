@@ -1,0 +1,56 @@
+name: Build Multi-Platform Binaries
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build for ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        include:
+          - os: ubuntu-latest
+            artifact_name: canary-automation-linux
+            executable_name: canary-automation-linux
+          - os: windows-latest
+            artifact_name: canary-automation-windows
+            executable_name: canary-automation-win.exe
+          - os: macos-latest
+            artifact_name: canary-automation-mac
+            executable_name: canary-automation-mac
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+        cache: 'pip'
+        
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+        pip install pyinstaller
+        
+    - name: Build with PyInstaller (Windows)
+      if: matrix.os == 'windows-latest'
+      run: |
+        pyinstaller --onefile --name canary-automation-win --add-data "DOCUMENTATION.md;." canary_automation.py
+        
+    - name: Build with PyInstaller (Linux/Mac)
+      if: matrix.os != 'windows-latest'
+      run: |
+        pyinstaller --onefile --name canary-automation-${{ matrix.os == 'macos-latest' && 'mac' || 'linux' }} --add-data "DOCUMENTATION.md:." canary_automation.py
+        
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: ${{ matrix.artifact_name }}
+        path: dist/canary-automation-*
